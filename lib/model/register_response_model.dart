@@ -36,31 +36,3 @@ class RegisterResponseModel {
   }
 }
 
-// class Data {
-//   Data({
-//     required this.username,
-//     required this.email,
-//     required this.date,
-//     required this.id,
-//   });
-//   late final String username;
-//   late final String email;
-//   late final String date;
-//   late final String id;
-
-//   Data.fromJson(Map<String, dynamic> json) {
-//     username = json['username'];
-//     email = json['email'];
-//     date = json['date'];
-//     id = json['id'];
-//   }
-
-//   Map<String, dynamic> toJson() {
-//     final _data = <String, dynamic>{};
-//     _data['username'] = username;
-//     _data['email'] = email;
-//     _data['date'] = date;
-//     _data['id'] = id;
-//     return _data;
-//   }
-// }

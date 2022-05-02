@@ -8,7 +8,6 @@ import '../apiservice/api_service.dart';
 import '../constant/config.dart';
 import '../model/login_request_model.dart';
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -110,12 +109,11 @@ class _LoginPageState extends State<LoginPage> {
                     context,
                     "${Icon(Icons.email)}",
                     "Enter the Email",
-                    
                     (onValidateVal) {
                       if (onValidateVal.isEmpty) {
                         return 'Email can\'t be empty.';
-                      }  if (!RegExp(r'\S+@\S+\.\S+')
-                          .hasMatch(onValidateVal)) {
+                      }
+                      if (!RegExp(r'\S+@\S+\.\S+').hasMatch(onValidateVal)) {
                         return 'Please enter a valid email address.';
                       }
 
@@ -152,11 +150,11 @@ class _LoginPageState extends State<LoginPage> {
                     context,
                     "${Icon(Icons.lock)}",
                     "Enter the Password",
-                    
                     (onValidateVal) {
                       if (onValidateVal.isEmpty) {
                         return 'Password can\'t be empty.';
-                      } if (onValidateVal.trim().length < 8) {
+                      }
+                      if (onValidateVal.trim().length < 8) {
                         return 'Password must be at least 8 characters in length';
                       }
 
@@ -188,16 +186,17 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 10,
+                // SizedBox(
+                //   height: 10,
+                // ),
+                TextButton(
+                  child: Text("Forgot password?"),
+                  //style: TextStyle(color: Colors.blue),
+                  onPressed: () {},
                 ),
-                Text(
-                  "Forgot password?",
-                  style: TextStyle(color: Colors.blue),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
+                // SizedBox(
+                //   height: 10,
+                // ),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   child: FormHelper.submitButton(
@@ -282,29 +281,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
-          // Align(
-          //   alignment: Alignment.bottomRight,
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(
-          //       right: 25,
-          //     ),
-          //     child: RichText(
-          //       text: TextSpan(
-          //         style: const TextStyle(color: Colors.grey, fontSize: 14.0),
-          //         children: <TextSpan>[
-          //           TextSpan(
-          //             text: 'Forget Password ?',
-          //             style: const TextStyle(
-          //               color: Colors.white,
-          //               decoration: TextDecoration.underline,
-          //             ),
-          //             recognizer: TapGestureRecognizer()..onTap = () {},
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // ),
+         
         ],
       ),
     );

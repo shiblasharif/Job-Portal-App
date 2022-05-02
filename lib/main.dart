@@ -1,20 +1,11 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:register_and_login_api/screens/homepage.dart';
 import 'package:register_and_login_api/screens/login_page.dart';
 import 'package:register_and_login_api/screens/register_page.dart';
 
-import 'model/usermodel.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  Hive.registerAdapter(UsermodelAdapter());
-  final a = Hive.openBox<Usermodel>("usermodel");
-  await Hive.openBox<Usermodel>('usermodel');
-  //Get.put(SignupController());
-
   runApp(const MyApp());
 }
 
@@ -45,7 +36,7 @@ class Frontpage extends StatefulWidget {
 }
 
 class _FrontpageState extends State<Frontpage> {
-  //sharefpref get function
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(

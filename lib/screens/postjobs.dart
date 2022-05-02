@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:register_and_login_api/model/jobpostrequest_model.dart';
+import 'package:register_and_login_api/model/jobpostresponse_model.dart';
 import 'package:register_and_login_api/screens/user_appliedjob.dart';
 import 'package:register_and_login_api/screens/user_postedjob.dart';
 
@@ -12,6 +14,14 @@ class PostJobs extends StatefulWidget {
 }
 
 class _PostJobsState extends State<PostJobs> {
+  GlobalKey<FormState> globalFormKey = GlobalKey<FormState>();
+  bool isApiCallProcess = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,11 +133,6 @@ class _PostJobsState extends State<PostJobs> {
                       child: SingleChildScrollView(
                           child: Padding(
                     padding: EdgeInsets.all(20.0),
-                    // child: Text(
-                    //   "Fill the form correctly",
-                    //   style:
-                    //       TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    // ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -182,6 +187,8 @@ class _PostJobsState extends State<PostJobs> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextFormField(
+                            minLines: 4,
+                            maxLines: null,
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               contentPadding: EdgeInsets.all(10),
@@ -338,7 +345,12 @@ class _PostJobsState extends State<PostJobs> {
                           children: [
                             Center(
                               child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  
+                                  
+
+
+                                },
                                 child: Text("Post Job"),
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.blue,
@@ -352,4 +364,13 @@ class _PostJobsState extends State<PostJobs> {
                   )))))
         ]));
   }
+
+  // bool validateAndSave() {
+  //   final form = globalFormKey.currentState;
+  //   if (form!.validate()) {
+  //     form.save();
+  //     return true;
+  //   }
+  //   return false;
+  // }
 }
